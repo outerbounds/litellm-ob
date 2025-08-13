@@ -1,0 +1,22 @@
+name: litellm-proxy
+port: 4000
+
+secrets:
+  - openai
+  - anthropic
+
+commands:
+  - litellm --config ./litellm_config.yaml
+
+image: ghcr.io/berriai/litellm:main-latest
+
+auth:
+  type: API 
+
+resources:
+  cpu: "2"
+  memory: "8Gi"
+  ephemeralStorage: "10Gi"
+
+compute_pools:
+  - obp-main
