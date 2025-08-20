@@ -6,7 +6,7 @@ secrets:
   - anthropic
 
 commands:
-  - litellm --config ./litellm_config.yaml
+  - litellm --config ./litellm_config.yml
 
 image: ghcr.io/berriai/litellm:main-latest
 
