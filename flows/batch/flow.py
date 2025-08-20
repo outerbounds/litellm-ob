@@ -7,9 +7,8 @@ class LiteLLMBatchDemo(FlowSpec):
     @secrets(sources=config.secrets)
     @pypi(packages={"litellm": ""})
     @step
-    @step
     def start(self):
-        import litellm
+        import litellm  # pylint: disable=import-error
         import os
 
         # NOTE: If you do not use the standard API KEY name
