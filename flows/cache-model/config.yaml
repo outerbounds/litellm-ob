@@ -1,0 +1,10 @@
+model_size: "8B"
+model_version: "3"
+base_model_name: Meta-Llama-${model_version}-${model_size}-Instruct
+
+huggingface:
+  repo_id: meta-llama/${base_model_name}
+  allow_patterns:
+    - "*.safetensors"
+    - "*.json"
+    - "original/tokenizer.*"

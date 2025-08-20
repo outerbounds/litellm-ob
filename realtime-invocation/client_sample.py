@@ -4,7 +4,8 @@ import os
 
 client = OpenAI(
     api_key="dummy",
-    base_url=os.getenv("LITELLM_PROXY_URL")
+    base_url="https://api-c-ayz5qf.dev-yellow.outerbounds.xyz"
+    #os.getenv("LITELLM_PROXY_URL")
 )
 
 response2 = client.chat.completions.create(

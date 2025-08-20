@@ -1,0 +1,26 @@
+name: vllm-endpoint
+port: 8000
+
+environment:
+  MODEL_NAME: ob-cached-model
+  FLOW_NAME: ModelCacher
+
+commands:
+  - "python model_init.py --model_dir $MODEL_NAME --flow_name $FLOW_NAME && vllm serve $MODEL_NAME --dtype=half"
+
+secrets:
+  - eddie-hf
+
+image: registry.hub.docker.com/eddieob/torchtune-vllm-inference:latest
+
+auth:
+  type: API
+
+resources:
+  cpu: "6"
+  memory: "24Gi"
+  ephemeralStorage: "90Gi"
+  gpu: "1"
+
+compute_pools:
+  - gpu-inference-24gb
