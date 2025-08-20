@@ -1,6 +1,6 @@
 import os
 from metaflow import (
-    FlowSpec,
+    # FlowSpec,
     step,
     current,
     IncludeFile,
@@ -32,7 +32,7 @@ def model_cache_environment(func):
         func = deco(func)
     return func
 
-class ModelCacher(FlowSpec):
+class ModelCacher(ProjectFlow):
 
     config = IncludeFile(
         "config",
