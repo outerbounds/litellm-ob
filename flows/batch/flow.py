@@ -1,6 +1,7 @@
-from metaflow import FlowSpec, step, pypi, secrets, Config, config_expr
+from obproject import ProjectFlow
+from metaflow import step, pypi, secrets, Config
 
-class LiteLLMBatchDemo(FlowSpec):
+class LiteLLMBatchDemo(ProjectFlow):
 
     config = Config("config", default="config.json")
 
