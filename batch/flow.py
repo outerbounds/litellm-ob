@@ -21,7 +21,11 @@ class LiteLLMBatchDemo(FlowSpec):
         # set OPENAI_API_KEY in the Outerbounds integration
         # and you will not need to do this. That is what this
         # example does with ANTHROPIC_API_KEY.
-        litellm.openai_key = os.environ["openai_api"]
+        try:
+            litellm.openai_key = os.environ["openai_api"]
+        except KeyError:
+            # Demo. If here, assume user set OPENAI_API_KEY in default manner.
+            pass
 
         self.responses = []
         for model in self.config.models: 
