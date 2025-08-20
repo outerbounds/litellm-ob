@@ -1,0 +1,4 @@
+{
+    "secrets": ["outerbounds.litellm-proxy"],
+    "models": ["claude-opus-4.1"]
+}

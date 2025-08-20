@@ -1,6 +1,4 @@
 platform = 'dev-yellow.outerbounds.xyz'
 project = 'litellm'
 title = 'LiteLLM'
-
-[dev-assets]
 branch = 'dev'
